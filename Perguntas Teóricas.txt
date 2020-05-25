@@ -1,0 +1,15 @@
+Em quais linguagens o C# foi inspirado?
+A criação do C# foi baseada em C, C++ e Java.
+
+Inicialmente o C# foi criado para qual finalidade?
+Surgiu com a finalidade de criar soluções sobre a plataform .NET Framework.
+
+Quais os principais motivos para a Microsoft ter migrado para o Core?
+Para atingir outros sistemas operacionais como Linux e MacOS, também para ser mais competitivo na camada de servidores,
+para criação de microserviços.
+
+Cite as principais diferenças entre .Net Full Framework e .Net Core.
+O .NET Framework é usado para desenvolvimento de aplicações Windows usando Windows Forms , WPF e de aplicações Web usando ASP .NET MVC.
+
+.NET Core é usado para criar aplicações Web para Windows, Linux e Mac.
+E é open source.
