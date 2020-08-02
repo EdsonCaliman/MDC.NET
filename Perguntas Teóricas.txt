@@ -8,8 +8,13 @@ Quais os principais motivos para a Microsoft ter migrado para o Core?
 Para atingir outros sistemas operacionais como Linux e MacOS, também para ser mais competitivo na camada de servidores,
 para criação de microserviços.
 
-Cite as principais diferenças entre .Net Full Framework e .Net Core.
+Cite as principais diferenças entre .Net Full Framework e .Net Core?
 O .NET Framework é usado para desenvolvimento de aplicações Windows usando Windows Forms , WPF e de aplicações Web usando ASP .NET MVC.
 
 .NET Core é usado para criar aplicações Web para Windows, Linux e Mac.
 E é open source.
+
+Quais os principais frameworks que podemos usar no desenvolvimento de testes?
+xUnit - xUnit.net is a free, open source, community-focused unit testing tool for the .NET Framework
+MS Test - Microsoft Test Framework
+NUnit - NUnit is a unit-testing framework for all .Net languages

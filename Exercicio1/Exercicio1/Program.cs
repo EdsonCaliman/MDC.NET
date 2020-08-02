@@ -4,16 +4,15 @@ namespace Exercicio1
 {
     class Program
     {
-        static int valorA = 0;
-        static int valorB = 0;
-        
+        private static Calculadora Calculadora;
 
         static void Main(string[] args)
         {
+            Calculadora = new Calculadora();
             Console.WriteLine("Digite o primeiro valor: ");
-            valorA = Int32.Parse(Console.ReadLine());
+            Calculadora.ValorA = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Digite o segundo valor: ");
-            valorB = Int32.Parse(Console.ReadLine());
+            Calculadora.ValorB = Int32.Parse(Console.ReadLine());
 
             ApresentarMenu();
 
@@ -32,23 +31,28 @@ namespace Exercicio1
             switch (opcao)
             {
                 case "1":
-                    SomarValores();
+                    Console.WriteLine(Calculadora.SomarValores());
+                    Console.ReadLine();
                     ApresentarMenu();
                     break;
                 case "2":
-                    SubtrairValores();
+                    Console.WriteLine(Calculadora.SubtrairValores());
+                    Console.ReadLine();
                     ApresentarMenu();
                     break;
                 case "3":
-                    DividirValores();
+                    Console.WriteLine(Calculadora.DividirValores());
+                    Console.ReadLine();
                     ApresentarMenu();
                     break;
                 case "4":
-                    MultiplicarValores();
+                    Console.WriteLine(Calculadora.MultiplicarValores());
+                    Console.ReadLine();
                     ApresentarMenu();
                     break;
                 case "5":
-                    ImprimirParOuImpar();
+                    Console.WriteLine(Calculadora.ImprimirParOuImpar());
+                    Console.ReadLine();
                     ApresentarMenu();
                     break;
                 case "S":
@@ -66,51 +70,6 @@ namespace Exercicio1
             Environment.Exit(0);
         }
 
-        private static void ImprimirParOuImpar()
-        {
-            var valor1EhPar = valorA % 2 == 0;
-            var valor2EhPar = valorB % 2 == 0;
-
-            Console.WriteLine($"Valor1 é Par? {valor1EhPar}");
-            Console.WriteLine($"Valor2 é Par? {valor2EhPar}");
-            Console.ReadLine();
-        }
-
-        private static void MultiplicarValores()
-        {
-            var multiplicacao = valorA * valorB;
-            Console.WriteLine("Resultado: {0}", multiplicacao);
-            Console.ReadLine();
-        }
-
-        private static void DividirValores()
-        {
-            try
-            {
-                var divisao = valorB / valorA;
-                Console.WriteLine("Resultado: {0}", divisao);
-            }
-            catch (DivideByZeroException)
-            {
-
-                Console.WriteLine("Divisão por zero!");
-            }
-            Console.ReadLine();
-
-        }
-
-        private static void SubtrairValores()
-        {
-            var subtracao = valorA - valorB;
-            Console.WriteLine("Resultado: {0}", subtracao);
-            Console.ReadLine();
-        }
-
-        private static void SomarValores()
-        {
-            var soma = valorA + valorB;
-            Console.WriteLine("Resultado: {0}", soma);
-            Console.ReadLine();
-        }
+        
     }
 }

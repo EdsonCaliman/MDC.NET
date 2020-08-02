@@ -93,7 +93,7 @@ namespace Exercicio4
             Console.Clear();
             foreach (var aluno in ListaAlunos)
             {
-                if (aluno.Nota > 7)
+                if (aluno.AlunoComNotaMaiorQueSete())
                 {
                     Console.WriteLine(MensagemAlunosComMediaSuperiorASete, aluno.Nome, aluno.Nota);
                 }
