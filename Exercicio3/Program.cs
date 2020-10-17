@@ -11,7 +11,6 @@ namespace Exercicio3
             int resto;
             while (contador <= 100)
             {
-                //Math.DivRem(contador, 3, out resto);
                 resto = contador % 3;
                 if (resto == 0) 
                 {

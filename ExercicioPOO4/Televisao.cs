@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExercicioPOO4
+﻿namespace ExercicioPOO4
 {
-    class Televisao
+    class Televisao : ITelevisao
     {
         private int _canal;
         public int Canal 
@@ -34,6 +30,41 @@ namespace ExercicioPOO4
         {
             this._canal = 1;
             this._volume = 0;
+        }
+
+        public void AumentarVolume()
+        {
+            ++Volume;
+        }
+
+        public void DiminuirVolume()
+        {
+            --Volume;
+        }
+
+        public void AumentarCanal()
+        {
+            ++Canal;
+        }
+
+        public void DiminuirCanal()
+        {
+            --Canal;
+        }
+
+        public void DefinirCanal(int canal)
+        {
+            Canal = canal;
+        }
+
+        public string ConsultarCanal()
+        {
+            return Canal.ToString();
+        }
+
+        public string ConsultarVolume()
+        {
+            return Volume.ToString();
         }
     }
 }

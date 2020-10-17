@@ -61,7 +61,7 @@ namespace Exercicio2
             try
             {
                 var salario = Console.ReadLine();
-                return Double.Parse(salario, CultureInfo.CurrentCulture);
+                return double.Parse(salario, CultureInfo.CurrentCulture);
             }
             catch (ArgumentNullException)
             {
@@ -82,12 +82,12 @@ namespace Exercicio2
 
         private static void ImprimirMaiorSalario()
         {
-            Double maiorSalario = 0;
+            double maiorSalario = 0;
             for (int i = 0; i < ListaFuncionarios.Count; i++)
             {
-                if (ListaFuncionarios[i].salario > maiorSalario)
+                if (ListaFuncionarios[i].Salario > maiorSalario)
                 {
-                    maiorSalario = ListaFuncionarios[i].salario;
+                    maiorSalario = ListaFuncionarios[i].Salario;
                 }
             }
             Console.WriteLine($"O maior salario é: {maiorSalario}");
@@ -96,20 +96,20 @@ namespace Exercicio2
 
         private static void ImprimirMenorSalario()
         {
-            Double menorSalario = 0;
+            double menorSalario = 0;
             var contador = 0;
             while (contador < ListaFuncionarios.Count)
             {
                 if (contador == 0)
                 {
-                    menorSalario = ListaFuncionarios[contador].salario;
+                    menorSalario = ListaFuncionarios[contador].Salario;
                     contador++;
                     continue;
                 }
                 
-                if (ListaFuncionarios[contador].salario < menorSalario)
+                if (ListaFuncionarios[contador].Salario < menorSalario)
                 {
-                    menorSalario = ListaFuncionarios[contador].salario;
+                    menorSalario = ListaFuncionarios[contador].Salario;
                 }
                 contador++;
             }
@@ -123,15 +123,4 @@ namespace Exercicio2
         }
     }
 
-    class Funcionario
-    {
-        public string nome;
-        public double salario;
-
-        public Funcionario(string nome, double salario)
-        {
-            this.nome = nome;
-            this.salario = salario;
-        }
-    }
 }

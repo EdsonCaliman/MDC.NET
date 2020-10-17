@@ -19,8 +19,8 @@ using System.Text;
 
         public Carro(string modelo)
         {
-            this.modelo = modelo;
-            this.velocidade = 0;
+            modelo = modelo;
+            velocidade = 0;
         }
 
         public void acelerar()
@@ -44,7 +44,7 @@ Um carro elétrico e outro a combustão tem o mesmo método acelerar, mas intern
 
         public void acelerar()
         {
-            this.mecanismoParaAcelerar();
+            mecanismoParaAcelerar();
         }
     }
 
@@ -86,8 +86,8 @@ Também foram alteradas as propriedades velocidade e modelo, para não serem ace
         private string modelo;
         public Carro(string modelo)
         {
-            this.modelo = modelo;
-            this.velocidade = 0;
+            modelo = modelo;
+            velocidade = 0;
         }
 
         private void mecanismoParaAcelerar()
@@ -97,7 +97,7 @@ Também foram alteradas as propriedades velocidade e modelo, para não serem ace
 
         public void acelerar()
         {
-            this.mecanismoParaAcelerar();
+            mecanismoParaAcelerar();
         }
     }
 
@@ -192,17 +192,17 @@ A interface IComparable define um método genérico de comparação para ordenar
             public int AnoFabricacao { get; set; }
             public int CompareTo([AllowNull] Carro other)
             {
-                if (this.Tipo.Contains("Novo"))
+                if (Tipo.Contains("Novo"))
                 {
-                    return this.Preco.CompareTo(other.Preco);
+                    return Preco.CompareTo(other.Preco);
                 }
 
-                return this.AnoFabricacao.CompareTo(other.AnoFabricacao);
+                return AnoFabricacao.CompareTo(other.AnoFabricacao);
             }
 
             public override string ToString()
             {
-                return "Fabricação: " + this.AnoFabricacao + "Preço: " + this.Preco + "Tipo: " + this.Tipo;
+                return "Fabricação: " + AnoFabricacao + "Preço: " + Preco + "Tipo: " + Tipo;
             }
         }
     }
@@ -217,12 +217,12 @@ A interface ICloneable dá suporte à clonagem, que cria uma nova instância de 
 
         public Carro(Carro c)
         {
-            this.Ano = c.Ano;
+            Ano = c.Ano;
         }
 
         public object Clone()
         {
-            return new Carro(this);
+            return new Carro();
         }
     }
 

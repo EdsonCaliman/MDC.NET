@@ -18,11 +18,10 @@ namespace Exercicio7
             var soma = 0;
             for (int i = 0; i < numeros.Length; i++)
             {
-
                 var resto = numeros[i] % 2;
                 if (resto == 0)
                 {
-                    soma = soma + numeros[i];
+                    soma += numeros[i];
                 }
             }
 

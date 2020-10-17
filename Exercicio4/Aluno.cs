@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Exercicio4
+﻿namespace Exercicio4
 {
     public class Aluno
     {
@@ -11,7 +7,7 @@ namespace Exercicio4
 
         public bool AlunoComNotaMaiorQueSete()
         {
-            return this.Nota > 7;
+            return Nota > 7;
         }
     }
 }

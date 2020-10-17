@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExercicioPOO3
+﻿namespace ExercicioPOO3
 {
 
     class ContaCorrente : ContaBancaria, IImprimivel
@@ -11,24 +7,26 @@ namespace ExercicioPOO3
         public override void Depositar(double valor)
         {
             var valorTaxa = CalcularTaxaPelaOperacao(valor);
-            this.Saldo = this.Saldo + valor - valorTaxa;
+            Saldo = Saldo + valor - valorTaxa;
         }
 
         public string MostrarDados()
         {
-            return "Conta Corrente: " + this.NumeroConta + " Taxa de Operação: " + this.TaxadeOperacao + " Saldo: " + this.Saldo;
+            return $"Conta Corrente: { NumeroConta } " +
+                $"Taxa de Operação: { TaxadeOperacao } " +
+                $"Saldo: { Saldo }";
         }
 
         public override void Sacar(double valor)
         {
             var valorTaxa = CalcularTaxaPelaOperacao(valor);
             ValidarSaldoSuficiente(valorTaxa + valor);
-            this.Saldo = this.Saldo - valor - valorTaxa;
+            Saldo = Saldo - valor - valorTaxa;
         }
 
         protected override void ValidarSaldoSuficiente(double valor)
         {
-            if ((this.Saldo - valor) < 0)
+            if ((Saldo - valor) < 0)
             {
                 throw new ERegraNegocioException("Saldo Insuficiente!");
             }

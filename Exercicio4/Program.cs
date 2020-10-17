@@ -56,9 +56,11 @@ namespace Exercicio4
             Console.WriteLine(DigiteONomeDoAluno);
             var nome = Console.ReadLine();
 
-            var aluno = new Aluno();
-            aluno.Nome = nome;
-            aluno.Nota = InformarNota();
+            var aluno = new Aluno
+            {
+                Nome = nome,
+                Nota = InformarNota()
+            };
 
             ListaAlunos.Add(aluno);
         }
@@ -69,7 +71,7 @@ namespace Exercicio4
             try
             {
                 var nota = Console.ReadLine();
-                return Double.Parse(nota, CultureInfo.CurrentCulture);
+                return double.Parse(nota, CultureInfo.CurrentCulture);
             }
             catch (ArgumentNullException)
             {

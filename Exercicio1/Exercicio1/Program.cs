@@ -10,9 +10,9 @@ namespace Exercicio1
         {
             Calculadora = new Calculadora();
             Console.WriteLine("Digite o primeiro valor: ");
-            Calculadora.ValorA = Int32.Parse(Console.ReadLine());
+            Calculadora.ValorA = int.Parse(Console.ReadLine());
             Console.WriteLine("Digite o segundo valor: ");
-            Calculadora.ValorB = Int32.Parse(Console.ReadLine());
+            Calculadora.ValorB = int.Parse(Console.ReadLine());
 
             ApresentarMenu();
 

@@ -9,7 +9,7 @@ namespace Exercicio8
     {
         static void Main(string[] args)
         {
-            List<Double> valores = new List<Double>();
+            List<double> valores = new List<double>();
 
             string valor = "";
             while (!valor.Contains('S'))
@@ -22,18 +22,17 @@ namespace Exercicio8
                 }
             }
 
-            List<Double> valoresOrdenadosCrescente = valores.OrderBy(v => v).ToList();
-
             Console.WriteLine("Crescente");
-            foreach (var item in valoresOrdenadosCrescente)
+            foreach (var item in valores.OrderBy(v => v))
             {
                 Console.WriteLine(item);
             }
 
-            List<Double> valoresOrdenadosDecrescente = valores.OrderByDescending(v => v).ToList();
-
             Console.WriteLine("Decrescente");
-            valoresOrdenadosDecrescente.ForEach(v => Console.WriteLine(v));
+            foreach (var item in valores.OrderByDescending(v => v))
+            {
+                Console.WriteLine(item);
+            }
 
         }
     }

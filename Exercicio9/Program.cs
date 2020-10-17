@@ -3,13 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//https://www.caelum.com.br/apostila-csharp-orientacao-objetos/linq-e-lambda/#outros-mtodos-do-linq
-
 namespace Exercicio9
 {
     class Program
     {
-        static List<int> valores = new List<int>();
+        static readonly List<int> valores = new List<int>();
 
         static void Main(string[] args)
         {
@@ -24,7 +22,7 @@ namespace Exercicio9
             string valor = "";
             while (!valor.ToUpper().Contains('S'))
             {
-                Console.WriteLine("Digite o valor ou S para terminar:");
+                Console.WriteLine("Digite o valor e pressione enter ou S para ir ao menu:");
                 valor = Console.ReadLine();
                 if (!valor.ToUpper().Contains('S'))
                 {
@@ -112,6 +110,7 @@ namespace Exercicio9
 
         private static void TransformarListaEmArray()
         {
+            Console.Clear();
             var valoresArray = valores.ToArray();
 
             Console.WriteLine("Exibindo dados do array");
@@ -119,12 +118,14 @@ namespace Exercicio9
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
 
         }
 
         private static void RetorneApenasNumeroInformado()
         {
+            Console.Clear();
             var valorInformado = Console.ReadLine();
             var valorRetornado = valores.Find(valor => valor == IntegerType.FromString(valorInformado));
             
@@ -136,80 +137,102 @@ namespace Exercicio9
             {
                 Console.WriteLine("Valor não encontrado");
             }
-            
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 
         private static void RetornarApenasNumerosPares()
         {
+            Console.Clear();
             var valoresPares = valores.Where(valor => valor%2==0);
             valoresPares.ToList().ForEach(v => Console.WriteLine(v));
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 
         private static void RemoverPrimeiroNumero()
         {
+            Console.Clear();
             valores.RemoveAt(0);
+            Console.WriteLine("Registro removido, pressione enter pra voltar ao menu");
+            Console.ReadLine();
         }
 
         private static void RemoverUltimoNumero()
         {
+            Console.Clear();
             valores.RemoveAt(valores.LastIndexOf(valores.LastOrDefault()));
+            Console.WriteLine("Registro removido, pressione enter pra voltar ao menu");
+            Console.ReadLine();
         }
 
         private static void InserirNoFinalDaLista()
         {
+            Console.Clear();
             Console.WriteLine("Digite o valor: ");
             var valor = Console.ReadLine();
             valores.Add(IntegerType.FromString(valor));
             Console.WriteLine("Valor Inserido");
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 
         private static void InserirNoInicioDaLista()
         {
+            Console.Clear();
             Console.WriteLine("Digite o valor: ");
             var valor = Console.ReadLine();
             valores.Insert(0, IntegerType.FromString(valor));
             Console.WriteLine("Valor Inserido");
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 
         private static void ImprimirUltimoNumero()
         {
+            Console.Clear();
             Console.WriteLine(valores.LastOrDefault());
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 
         private static void ImprimirPrimeiroNumero()
         {
+            Console.Clear();
             Console.WriteLine(valores.FirstOrDefault());
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 
         private static void ImprimirTodosOsNumerosDecrescente()
         {
+            Console.Clear();
             var valoresOrdenados = from valor in valores
                                    orderby valor descending
                                    select valor;
 
             valoresOrdenados.ToList().ForEach(v => Console.WriteLine(v));
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 
         private static void ImprimirTodosOsNumerosCrescente()
         {
+            Console.Clear();
             var valoresOrdenados = from valor in valores
                                    orderby valor ascending
                                    select valor;
 
             valoresOrdenados.ToList().ForEach(v => Console.WriteLine(v));
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 
         private static void ImprimirTodosOsNumerosDaLista()
         {
+            Console.Clear();
             valores.ForEach(v => Console.WriteLine(v));
+            Console.WriteLine("Pressione enter pra voltar ao menu");
             Console.ReadLine();
         }
 

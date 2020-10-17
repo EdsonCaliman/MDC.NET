@@ -13,7 +13,10 @@ namespace ExercicioPOO2
             Console.WriteLine("Informe a altura");
             double altura = Convert.ToDouble(Console.ReadLine());
 
-            Pessoa pessoa = new Pessoa(nome, Convert.ToDateTime(datanascimento), altura);
+            Pessoa pessoa = new Pessoa();
+            pessoa.DefinirNome(nome);
+            pessoa.DefinirDataNascimento(Convert.ToDateTime(datanascimento));
+            pessoa.DefinirAltura(altura);
 
             Console.WriteLine(pessoa.ToString());
 

@@ -7,7 +7,8 @@ namespace ExercicioPOO4
         static void Main(string[] args)
         {
             Console.WriteLine("Criando Controle Remoto");
-            ControleRemoto controle = new ControleRemoto();
+            ITelevisao tvPhilhips = new Televisao();
+            ControleRemoto controle = new ControleRemoto(tvPhilhips);
             Console.WriteLine($"Canal Atual: {controle.ConsultarCanal()}");
             Console.WriteLine($"Volume Atual: {controle.ConsultarVolume()}");
             Console.WriteLine("Aumentando Canal");

@@ -4,43 +4,53 @@ namespace ExercicioPOO2
 {
     class Pessoa
     {
-        private string _nome;
-        public string Nome
+        private string Nome;
+
+        public string PegarNome()
         {
-            get => _nome;
-            set => _nome = value;
+            return Nome;
         }
 
-        private DateTime _dataNascimento;
-
-        public DateTime DataNascimento
+        public void DefinirNome(string value)
         {
-            get => _dataNascimento;
-            set => _dataNascimento = value;
+            Nome = value;
         }
 
-        private double _altura;
-        public double Altura
+        private DateTime DataNascimento;
+
+        public DateTime PegarDataNascimento()
         {
-            get => _altura;
-            set => _altura = value;
+            return DataNascimento;
         }
 
-        public Pessoa(string nome, DateTime datanascimento, double altura)
+        public void DefinirDataNascimento(DateTime value)
         {
-            _nome = nome;
-            _dataNascimento = datanascimento;
-            _altura = altura;
+            DataNascimento = value;
+        }
+
+        private double Altura;
+
+        public double PegarAltura()
+        {
+            return Altura;
+        }
+
+        public void DefinirAltura(double value)
+        {
+            Altura = value;
         }
 
         public override string ToString()
         {
-            return "Nome: " + _nome + " Data Nascimento: " + (_dataNascimento.ToString("dd/MM/yyyy")) + " Altura: " + _altura + " Idade: " + this.RetornarIdadedaPessoa();
+            return $"Nome: {PegarNome()}" +
+                $" Data Nascimento: {PegarDataNascimento().ToString("dd/MM/yyyy")}" +
+                $" Altura: {PegarAltura()}" +
+                $" Idadde: {RetornarIdadedaPessoa()}";
         }
 
         public int RetornarIdadedaPessoa()
         {
-            return DateTime.Today.Year - _dataNascimento.Year;
+            return DateTime.Today.Year - DataNascimento.Year;
         }
     }
 }

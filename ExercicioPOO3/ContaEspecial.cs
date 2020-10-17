@@ -1,31 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExercicioPOO3
+﻿namespace ExercicioPOO3
 {
     class ContaEspecial : ContaBancaria, IImprimivel
     {
         public double LimiteEspecial { get; set; }
         public override void Depositar(double valor)
         {
-            this.Saldo = this.Saldo + valor;
+            Saldo = Saldo + valor;
         }
 
         public string MostrarDados()
         {
-            return "Conta Especial: " + this.NumeroConta + " Limite Especial: " + this.LimiteEspecial + " Saldo: " + this.Saldo;
+            return $"Conta Especial: { NumeroConta } " +
+                $"Limite Especial: { LimiteEspecial } " +
+                $"Saldo: { Saldo }";
         }
 
         public override void Sacar(double valor)
         {
             ValidarSaldoSuficiente(valor);
-            this.Saldo = this.Saldo - valor;
+            Saldo = Saldo - valor;
         }
 
         protected override void ValidarSaldoSuficiente(double valor)
         {
-            var saldoTotal = this.Saldo + LimiteEspecial;
+            var saldoTotal = Saldo + LimiteEspecial;
             if ((saldoTotal - valor) < 0)
             {
                 throw new ERegraNegocioException("Saldo Insuficiente!");

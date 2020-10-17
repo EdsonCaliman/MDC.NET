@@ -6,12 +6,17 @@ namespace Exercicio6
     {
         static void Main(string[] args)
         {
-            int valorOut = 20;
             int valorRef = 20;
             int valor = 20;
-            Console.WriteLine("Valor SomarRef:" + SomarRef(ref valorOut)); //não altera o valor
-            Console.WriteLine("Valor SomarOut:" + SomarOut(out valorRef)); //altera o valor, mas deve ser inicializado, exclusivo para retorno
-            Console.WriteLine("Valor Somar:" + Somar(valor)); //default ref
+            //Para ser passado via referência a variável deve ser inicializada
+            Console.WriteLine("Passando o valor 20 por referência, e executando a soma do mesmo valor: " 
+                + SomarRef(ref valorRef));
+            //Para passar um argumento como ref não é necessário inicializar, pois deve ser inicializado dentro no método
+            SomarOut(out int valorOut);
+            Console.WriteLine("Passar argumento via ref, sem inicializar, retornado valor inicializado/calculado no método: " 
+                + valorOut);
+            //default c# é passar via referência
+            Console.WriteLine("Default c# por referência, somar valor internamente: " + Somar(valor));
         }
 
         private static int Somar(int valor)
@@ -19,15 +24,15 @@ namespace Exercicio6
             return valor + valor;
         }
 
-        private static int SomarOut(out int valorRef)
+        private static void SomarOut(out int valorOut)
         {
-            valorRef = 0;
-            return valorRef + valorRef;
+            valorOut = 10;
+            valorOut += valorOut;
         }
 
-        private static int SomarRef(ref int valorOut)
+        private static int SomarRef(ref int valorRef)
         {
-            return valorOut + valorOut;
+            return valorRef + valorRef;
         }
     }
 }

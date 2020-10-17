@@ -1,51 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ExercicioPOO4
+﻿namespace ExercicioPOO4
 {
     class ControleRemoto
     {
-        private Televisao Televisao;
+        private ITelevisao Televisao;
 
-        public ControleRemoto()
+        public ControleRemoto(ITelevisao televisao)
         {
-            Televisao = new Televisao();
+            Televisao = televisao;
         }
 
         public void AumentarVolume()
         {
-            ++Televisao.Volume;
+            Televisao.AumentarVolume();
         }
 
         public void DiminuirVolume()
         {
-            --Televisao.Volume;
+            Televisao.DiminuirVolume();
         }
 
         public void AumentarCanal()
         {
-            ++Televisao.Canal;
+            Televisao.AumentarCanal();
         }
 
         public void DiminuirCanal()
         {
-            --Televisao.Canal;
+            Televisao.DiminuirCanal();
         }
 
         public void DefinirCanal(int canal)
         {
-            Televisao.Canal = canal;
+            Televisao.DefinirCanal(canal);
         }
 
         public string ConsultarCanal()
         {
-            return Televisao.Canal.ToString();
+            return Televisao.ConsultarCanal();
         }
 
         public string ConsultarVolume()
         {
-            return Televisao.Volume.ToString();
+            return Televisao.ConsultarVolume();
         }
+
     }
 }
