@@ -4,53 +4,53 @@ namespace ExercicioPOO2
 {
     class Pessoa
     {
-        private string Nome;
+        private string _nome;
 
         public string PegarNome()
         {
-            return Nome;
+            return _nome;
         }
 
         public void DefinirNome(string value)
         {
-            Nome = value;
+            _nome = value;
         }
 
-        private DateTime DataNascimento;
+        private DateTime _dataNascimento;
 
         public DateTime PegarDataNascimento()
         {
-            return DataNascimento;
+            return _dataNascimento;
         }
 
         public void DefinirDataNascimento(DateTime value)
         {
-            DataNascimento = value;
+            _dataNascimento = value;
         }
 
-        private double Altura;
+        private double _altura;
 
         public double PegarAltura()
         {
-            return Altura;
+            return _altura;
         }
 
         public void DefinirAltura(double value)
         {
-            Altura = value;
+            _altura = value;
         }
 
         public override string ToString()
         {
-            return $"Nome: {PegarNome()}" +
-                $" Data Nascimento: {PegarDataNascimento().ToString("dd/MM/yyyy")}" +
-                $" Altura: {PegarAltura()}" +
+            return $"Nome: {_nome}" +
+                $" Data Nascimento: {_dataNascimento:dd/MM/yyyy}" +
+                $" Altura: {_altura}" +
                 $" Idadde: {RetornarIdadedaPessoa()}";
         }
 
         public int RetornarIdadedaPessoa()
         {
-            return DateTime.Today.Year - DataNascimento.Year;
+            return DateTime.Today.Year - _dataNascimento.Year;
         }
     }
 }
